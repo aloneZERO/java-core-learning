@@ -5,10 +5,10 @@ import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Enumeration;
 import java.util.zip.Adler32;
 import java.util.zip.CheckedInputStream;
@@ -35,17 +35,25 @@ import java.util.zip.ZipOutputStream;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-10-17 14:58:59
- *  利用Zip进行多文件保存
+ * 利用Zip进行多文件保存
+ * 
+ * @author Jeff Lee, justZero
+ * @since 2015-10-17
  */
+@SuppressWarnings("all")
 public class ZipCompress {
-    private static String filePath = "src" + File.separator +
+	
+	// eclipse maven项目环境下获取的路径 （实际使用，适自己情况修改）
+	private static String srcPath = new File(ZipCompress.class.getResource("/").getPath())
+			.getParentFile().getParent()+File.separator+"src";
+    private static String filePath = srcPath + File.separator +
+    		"main" + File.separator +
+    		"java" + File.separator +
             "org" + File.separator +
             "javacore" + File.separator +
             "io" + File.separator;
 
-    private static String[]  fileNames= new String[] {
+    private static String[]  fileNames = new String[] {
         filePath + "BufferedInputFileT.java",
         filePath + "ChangeSystemOut.java"
     };
@@ -69,8 +77,7 @@ public class ZipCompress {
         for (String file : fileNames) {
             System.out.println("写入文件: " + file);
             // 获取文件输入字符流
-            BufferedReader in =
-                    new BufferedReader(new FileReader(file));
+            BufferedReader in = new BufferedReader(new FileReader(file));
             // 想Zip处理写入新的文件条目，并流定位到数据开始处
             zos.putNextEntry(new ZipEntry(file));
             int c;

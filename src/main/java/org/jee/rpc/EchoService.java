@@ -5,5 +5,7 @@ package org.jee.rpc;
  * Created by bysocket on 16/2/28.
  */
 public interface EchoService {
+	
     String echo(String ping);
+    
 }

@@ -19,9 +19,9 @@ import java.util.LinkedList;
  */
 
 /**
+ * ArrayList与LinkedList性能的对比
  * @author Jeff Lee
  * @since 2015-6-18 21:05:38
- * 	ArrayList与LinkedList性能的对比
  */
 public class PerBtwnArlAndLklT{
 	

@@ -19,13 +19,14 @@ import java.util.Set;
  */
 
 /**
+ * HashSet的Add方法
+ * 
  * @author Jeff Lee
- * @since 2015-6-19 15:46:37
- * 	HashSet的Add方法
+ * @since 2015-6-19
  */
-public class HashSetT{
+public class HashSetT {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		Set h1 = new HashSet<String>();
 		h1.add("List");
 		h1.add(new String("List"));

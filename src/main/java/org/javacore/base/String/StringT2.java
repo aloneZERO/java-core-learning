@@ -1,4 +1,6 @@
-package org.javacore.base.String; /*
+package org.javacore.base.String; 
+
+/*
  * Copyright [2015] [Jeff Lee]
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,22 +17,25 @@ package org.javacore.base.String; /*
  */
 
 /**
- * @author BYSocket
- * @since 2016-01-06 20:07:00
  * 对象含有String作为方法参数传递
+ * @author BYSocket, justZero
+ * @since 2016-01-06
  */
 public class StringT2 {
-
+	
+	static StringObject sb = new StringObject();
+	
     public static void main(String[] args) {
-        StringObject sb = new StringObject();
+        
         sb.setName("123");
         change(sb);
         System.out.println(sb.getName());
     }
 
-    public static void change(StringObject sb) {
-        sb = new StringObject();
-        sb.setName("456");
+    public static void change(StringObject so) {
+    	System.out.println(so==sb);
+        so = new StringObject();
+        so.setName("456");
     }
 
 }

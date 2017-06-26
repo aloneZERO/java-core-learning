@@ -20,6 +20,7 @@ package org.javacore.initAndCleanup;
  * @since 2015-9-8 09:31:12
  * 默认构造函数和方法的区别
  */
+@SuppressWarnings("all")
 public class VoidConstructor {
 	
 	VoidConstructor(){

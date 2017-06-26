@@ -16,14 +16,13 @@ import java.net.Socket;
  * 4. 同步阻塞等待服务端返回应答,获取应答后返回
  * Created by bysocket on 16/2/29.
  */
+@SuppressWarnings("all")
 public class RpcImporter<S> {
     public S importer(final Class<?> serviceClass, final InetSocketAddress address) {
         // JDK动态代理,实现接口的远程调用
         return (S) Proxy.newProxyInstance(serviceClass.getClassLoader(),
                 new Class<?>[]{serviceClass.getInterfaces()[0]},
                 new InvocationHandler() {
-
-                    @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                         Socket socket = null;
                         ObjectOutputStream output = null;

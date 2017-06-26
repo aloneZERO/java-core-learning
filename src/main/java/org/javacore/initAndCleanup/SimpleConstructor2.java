@@ -16,9 +16,9 @@ package org.javacore.initAndCleanup;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-9-7 16:54:19
  * 带参数简单构造器的展示
+ * @author Jeff Lee
+ * @since 2015-9-7
  */
 public class SimpleConstructor2 {
 	public static void main(String[] args) {

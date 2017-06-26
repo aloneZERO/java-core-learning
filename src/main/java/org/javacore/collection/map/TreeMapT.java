@@ -18,21 +18,27 @@ import java.util.TreeMap;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-6-18 21:36:04
- * 	TreeMap 的使用
+ * TreeMap 的使用
+ * @author Jeff Lee, justZero
+ * @since 2015-6-18
  */
-public class TreeMapT
-{	
+public class TreeMapT {
+	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static void main(String[] args)
-	{
-		Map map = new TreeMap();
+	public static void main(String[] args) {
+		Map map = new TreeMap(); // 内部数据结构二叉树
 		map.put("1", "1");
 		map.put("4", "4");
 		map.put("2", "2");
 		map.put("2", "3");
-		// 注意排序
+		// 有序：按 key 排序
 		System.out.println(map);
+		
+		Map map2 = new TreeMap();
+		map2.put("a", "1");
+		map2.put("d", "4");
+		map2.put("c", "2");
+		map2.put("c", "3");
+		System.out.println(map2);
 	}
 }

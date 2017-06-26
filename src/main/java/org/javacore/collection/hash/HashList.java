@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by bysocket on 16/9/26.
+ * HashList
+ * @author bysocket, justZero
+ * @since 16/9/26
  */
 public class HashList {
     public static void main(String[] args) {
@@ -28,8 +30,38 @@ public class HashList {
             skuObj.setDesc("descexist" + i);
             existSkuObjList.add(skuObj);
         }
-
-
-
     }
 }
+
+class SkuObj {
+    private Integer id;
+    private String name;
+    private Integer age;
+    private String desc;
+
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public Integer getAge() {
+        return age;
+    }
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+    public String getDesc() {
+        return desc;
+    }
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+}
+

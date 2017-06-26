@@ -22,59 +22,59 @@ import java.util.ListIterator;
  */
 
 /**
+ * Iterator与ListIterator的区别
+ * 
  * @author Jeff Lee
- * @since 2015-6-18 21:36:04
- * 	Iterator与ListIterator的区别
+ * @since 2015-6-18
  */
 public class IterAndListIterT {
-	
+
 	public static void main(String[] args) {
-		//iterator();
+//		iterator();
 		listIterator();
 	}
-	
+
 	/**
-	 * 并发修改异常产生。
-	 * 原因：Iterator(Object obj = it.next()) 会检查HashMap的size，
+	 * 并发修改异常产生。 原因：Iterator(Object obj = it.next()) 会检查HashMap的size，
 	 * size发生变化，抛出错误ConcurrentModificationException。
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public static void iterator(){
+	public static void iterator() {
 		List a1 = new ArrayList<String>();
 		a1.add("List01");
 		a1.add("List02");
 		a1.add("List04");
 		a1.add("List05");
-		
+
 		Iterator i1 = a1.iterator();
-		while (i1.hasNext()){
+		while (i1.hasNext()) {
 			Object obj = i1.next();
 			if (obj.equals("List02"))
 				a1.add("List03");
 		}
-		
-		System.out.print("集合：\n\t"+a1+"\n");
+
+		System.out.println("集合：" + a1);
 	}
-	
+
 	/**
 	 * ListIterator可以实现对象的修改。
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public static void listIterator(){
+	public static void listIterator() {
 		List a1 = new ArrayList<String>();
 		a1.add("List01");
 		a1.add("List");
 		a1.add("List03");
 		a1.add("List04");
-		
+
 		ListIterator l1 = a1.listIterator();
-		while (l1.hasNext()){
+		while (l1.hasNext()) {
 			Object obj = l1.next();
-			if (obj.equals("List")){
+			if (obj.equals("List")) {
 				l1.remove();
 				l1.add("List02");
 			}
 		}
-		System.out.print("集合：\n\t"+a1+"\n");
+		System.out.println("集合：" + a1);
 	}
 }

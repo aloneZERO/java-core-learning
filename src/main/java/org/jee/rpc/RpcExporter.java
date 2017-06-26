@@ -1,7 +1,6 @@
 package org.jee.rpc;
 
 import java.io.IOException;
-import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Method;
@@ -46,7 +45,6 @@ public class RpcExporter {
             this.client = accept;
         }
 
-        @Override
         public void run() {
             ObjectInputStream   input  = null;
             ObjectOutputStream  output = null;

@@ -19,16 +19,16 @@ import java.util.Arrays;
  */
 
 /**
+ * 不使用接口的接口案例
  * @author Jeff Lee
- * @since 2015-12-1 13:04:30
- *  不使用接口的接口案例
+ * @since 2015-12-1
  */
 class Processor {
-    public String name(){
+    public String name() {
         return getClass().getSimpleName();
     }
 
-    Object process(Object input){return input;}
+    Object process(Object input) {return input;}
 }
 
 class Upcase extends Processor {
@@ -51,7 +51,7 @@ public class ApplyClass {
         System.out.println(p.process(input));
     }
 
-    public static String s = "BYSocket's Blog is www.bysocket.com";
+    public static String s = "I like java";
     public static void main(String[] args) {
         process(new Upcase(),s);
         process(new Splitcase(),s);

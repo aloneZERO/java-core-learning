@@ -18,13 +18,13 @@ import java.util.HashSet;
  */
 
 /**
+ * HashSet 操作对象的决定因子：hashCode与equals
  * @author Jeff Lee
  * @since 2015-6-19 15:41:03
- * 	HashSet 操作对象的决定因子：hashCode与equals
  */
-public class HashSetObjT{
+public class HashSetObjT {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		HashSet objs = new HashSet();
 		objs.add(new A());
 		objs.add(new B());
@@ -32,6 +32,7 @@ public class HashSetObjT{
 		objs.add(new A());
 		objs.add(new B());
 		objs.add(new C());
+		System.out.println("HashSet Size: "+objs.size());
 		System.out.println("HashSet Elements:");
 		System.out.print("\t" + objs + "\n");
 	}
@@ -43,17 +44,17 @@ class A {
 }
 
 class B {
-	public int hashCode(){
+	public int hashCode() {
 		return 1;
 	}
 }
 
 class C {
-	public int hashCode(){
+	public int hashCode() {
 		return 2;
 	}
 
-	public boolean equals(Object obj){
+	public boolean equals(Object obj) {
 		return true;
 	}
 }

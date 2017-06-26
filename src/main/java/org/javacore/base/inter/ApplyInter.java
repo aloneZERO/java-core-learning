@@ -19,9 +19,9 @@ import java.util.Arrays;
  */
 
 /**
+ * 使用接口的接口案例
  * @author Jeff Lee
- * @since 2015-12-1 13:04:30
- *  使用接口的接口案例
+ * @since 2015-12-1
  */
 interface ProcessorInter {
     String name();
@@ -59,9 +59,9 @@ public class ApplyInter {
         System.out.println(p.process(input));
     }
 
-    public static String s = "BYSocket's Blog is www.bysocket.com";
+    public static String s = "I like java";
     public static void main(String[] args) {
-        process(new UpcaseImpl(),s);
-        process(new SplitcaseImpl(),s);
+        process(new UpcaseImpl(), s);
+        process(new SplitcaseImpl(), s);
     }
 }

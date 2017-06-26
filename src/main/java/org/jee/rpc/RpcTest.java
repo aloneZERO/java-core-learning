@@ -11,7 +11,6 @@ public class RpcTest {
     public static void main(String[] args) {
         // 启动服务提供者
         new Thread(new Runnable() {
-            @Override
             public void run() {
                 try {
                     RpcExporter.exporter("localhost",8088);

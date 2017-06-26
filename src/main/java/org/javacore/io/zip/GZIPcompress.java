@@ -3,9 +3,7 @@ package org.javacore.io.zip;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.zip.GZIPInputStream;
@@ -28,15 +26,18 @@ import java.util.zip.GZIPOutputStream;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-10-17 13:59:25
  * GZIP简单使用
+ * @author Jeff Lee, justZero
+ * @since 2015-10-17
  */
 public class GZIPcompress {
+	
+	private static String testFilePath = GZIPcompress.class.getResource("/io/zip/gzip-test.txt").getPath();
+	
     public static void main(String[] args) throws IOException {
         // 用Reader读文件
         BufferedReader in = new BufferedReader(new  InputStreamReader(
-                new  FileInputStream("data.gz" ),  "UTF-8" ));
+                new  FileInputStream(testFilePath),  "UTF-8" ));
         // 使用缓冲输出流，输出压缩流文件
         BufferedOutputStream out = new BufferedOutputStream(
                 new GZIPOutputStream(new FileOutputStream("data.gz")));
@@ -51,7 +52,7 @@ public class GZIPcompress {
         // 用输入解压流读取文件
         BufferedReader in2 = new BufferedReader(
                 new InputStreamReader(
-                        new GZIPInputStream(new FileInputStream("data.gz")),"UTF-8"));// encoding question
+                        new GZIPInputStream(new FileInputStream("data.gz")),"UTF-8")); // encoding question
         String s;
         while ((s=in2.readLine()) != null)
             System.out.println(s);

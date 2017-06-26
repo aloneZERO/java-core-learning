@@ -17,9 +17,9 @@ package org.javacore.base.copy;
  */
 
 /**
+ * 深拷贝与浅拷贝
  * @author Jeff Lee
- * @since 2015-11-16 13:53:51
- *  深拷贝与浅拷贝
+ * @since 2015-11-16
  */
 class Family implements Cloneable{
     private String name;
@@ -31,6 +31,11 @@ class Family implements Cloneable{
     public void setName(String name) {
         this.name = name;
     }
+
+	@Override
+	public String toString() {
+		return "{Family: "+ name + "}";
+	}
 
     /**
      * 深拷贝
@@ -47,6 +52,7 @@ class Family implements Cloneable{
         return o;
     }*/
 }
+
 class Student implements Cloneable{
     private String name;
     private Family family;
@@ -66,8 +72,13 @@ class Student implements Cloneable{
     public void setFamily(Family family) {
         this.family = family;
     }
+    
+    @Override
+	public String toString() {
+		return "{Student: {name:" + name + ", family:" + family + "}";
+	}
 
-    /**
+	/**
      * 浅拷贝 对其对象的引用却没有拷贝
      * @return
      * @throws CloneNotSupportedException
@@ -102,9 +113,9 @@ public class CopyT {
         student1.setName("Jeff");
 
         Student student2 = (Student) student1.clone();
-        student2.setName("Jeff2");
-        student2.getFamily().setName("Jeff2 Family");
-        System.out.println(student1.getName() + " " + student1.getFamily().getName());
-        System.out.println(student2.getName() + " " + student2.getFamily().getName());
+        student2.setName("New");
+        student2.getFamily().setName("New Family");
+        System.out.println(student1);
+        System.out.println(student2);
     }
 }

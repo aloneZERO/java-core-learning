@@ -18,13 +18,12 @@ import java.util.Map;
  */
 
 /**
+ * HashMap的"Add"方法
  * @author Jeff Lee
  * @since 2015-6-18 21:36:04
- * HashMap的Add方法
  */
-public class HaspMapT{
-	public static void main(String[] args)
-	{
+public class HaspMapT {
+	public static void main(String[] args) {
 		objOper();
 		nullOper();
 	}
@@ -32,7 +31,7 @@ public class HaspMapT{
 	/**
 	 * HaspMap操作对象方法
 	 */
-	public static void objOper(){
+	public static void objOper() {
 		Map<String, Employee> employees = new HashMap<String, Employee>();
 		
 		String number = "1206010035";
@@ -51,10 +50,9 @@ public class HaspMapT{
 	public static void nullOper(){
 		Map map = new HashMap<String, String>();
 		map.put(null, "null01");
-		map.put(null, "null02");
+		map.put(null, "null02"); // key 已存在，value 被新值覆盖
 		System.out.println(map);
 		System.out.println(map.get(null));
 	}
 }
-class Employee
-{}
+class Employee {}

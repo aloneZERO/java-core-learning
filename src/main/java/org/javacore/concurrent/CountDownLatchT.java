@@ -9,7 +9,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * 同步辅助类:完成一组线程执行前,使得一个或多个线程一直等待
  *
- * Created by bysocket on 16/4/26.
+ * @author bysocket
+ * @since 16/4/26
  */
 public class CountDownLatchT {
 
@@ -32,7 +33,6 @@ public class CountDownLatchT {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
             });
         }
 
@@ -41,8 +41,6 @@ public class CountDownLatchT {
         service.shutdown();
 
         System.out.println("同步线程执行组结束!");
-
     }
 }
-
 

@@ -23,13 +23,13 @@ import java.io.IOException;
  */
 
 /**
- * @author Jeff Lee
- * @since 2016-06-28 14:05:26
  * 图片裁成椭圆
+ * @author Jeff Lee
+ * @since 2016-06-28
  */
 public class ImgCircleCut {
 
-    public static boolean ImgCircleCut(String srcFile, String targetFile) {
+    public static boolean imgCircleCut(String srcFile, String targetFile) {
         try {
             // 获取img的BufferedImage对象,可以考虑创建不带透明色的BufferedImage对象:BufferedImage.TYPE_INT_ARGB
             BufferedImage srcBi = ImageIO.read(new File(srcFile));

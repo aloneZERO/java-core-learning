@@ -19,12 +19,12 @@ import java.util.HashMap;
  */
 
 /**
+ * HashMap 操作对象的决定因子：hashCode与equals
  * @author Jeff Lee
- * @since 2015-6-18 22:05:44
- * 	HashMap 操作对象的决定因子：hashCode与equals
+ * @since 2015-6-18
  */
-public class HashMapObjT{
-	public static void main(String[] args){
+public class HashMapObjT {
+	public static void main(String[] args) {
 		HashMap<A, Integer> hashMapA = new HashMap<A, Integer>();
 		hashMapA.put(new A(), 10);
 		hashMapA.put(new A(), 5);
@@ -45,24 +45,24 @@ public class HashMapObjT{
 	}
 }
 
-class A{
-	public boolean equals(Object obj){
+class A {
+	public boolean equals(Object obj) {
 		return true;
 	}
 }
 
-class B{
-	public int hashCode(){
+class B {
+	public int hashCode() {
 		return 1;
 	}
 }
 
-class C{
-	public int hashCode(){
+class C {
+	public int hashCode() {
 		return 2;
 	}
 
-	public boolean equals(Object obj){
+	public boolean equals(Object obj) {
 		return true;
 	}
 }
