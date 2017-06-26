@@ -22,27 +22,23 @@ import java.io.IOException;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-8-11 11:44:59
  * 文件复制
+ * 
+ * @author Jeff Lee
+ * @since 2015-8-11
  */
 public class CopyFileT {
 	public static void main(String[] args) throws IOException {
-		String dir = "src" + File.separator +
-				"org" + File.separator +
-				"javacore" + File.separator +
-				"io";
-		
-		copyFile(dir + File.separator + "/CopyFileT.java", "D://Copy.java");
+		String dir = CopyFileT.class.getResource("/io").getPath();
+
+		copyFile(dir + File.separator + "test.txt", "D:/Copy-test.txt");
 	}
-	
-	public static void copyFile(String srcFile,String destFile) 
-		throws IOException {
+
+	public static void copyFile(String srcFile, String destFile) throws IOException {
 		copyFile(new File(srcFile), new File(destFile));
 	}
-	
-	public static void copyFile(File srcFile,File destFile)
-		throws IOException {
+
+	public static void copyFile(File srcFile, File destFile) throws IOException {
 		// 文件不存在
 		if (!srcFile.exists()) {
 			throw new IllegalArgumentException("文件：" + srcFile + "不存在");
@@ -55,7 +51,7 @@ public class CopyFileT {
 		FileOutputStream out = new FileOutputStream(destFile);
 		byte[] bytes = new byte[2 * 1024];
 		int b;
-		while ((b=in.read(bytes, 0, bytes.length)) != -1) {
+		while ((b = in.read(bytes, 0, bytes.length)) != -1) {
 			out.write(bytes, 0, b);
 			out.flush();
 		}

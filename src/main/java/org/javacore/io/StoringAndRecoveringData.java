@@ -25,9 +25,10 @@ import java.io.IOException;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-9-28 17:30:21
  * DataOutputStream和DataInputStream的使用案例
+ * 
+ * @author Jeff Lee
+ * @since 2015-9-28
  */
 public class StoringAndRecoveringData {
 
@@ -35,7 +36,7 @@ public class StoringAndRecoveringData {
 	public static void main(String[] args) throws IOException {
 		// 写入数据
 		DataOutputStream outputStream = new DataOutputStream(
-				new BufferedOutputStream(new FileOutputStream("data.txt")));
+				new BufferedOutputStream(new FileOutputStream("data.bin")));
 		outputStream.writeDouble(3.1415926);
 		outputStream.writeUTF("你好");
 		outputStream.writeInt(1);
@@ -43,7 +44,7 @@ public class StoringAndRecoveringData {
 		
 		// 写出数据
 		DataInputStream inputStream = new DataInputStream(
-				new BufferedInputStream(new FileInputStream("data.txt")));
+				new BufferedInputStream(new FileInputStream("data.bin")));
 		System.out.println(inputStream.readDouble());
 		System.out.println(inputStream.readUTF());
 		System.out.println(inputStream.readInt());

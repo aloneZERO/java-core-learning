@@ -5,14 +5,18 @@ import java.io.DataInputStream;
 import java.io.EOFException;
 import java.io.File;
 import java.io.IOException;
+
 /**
- * @author Jeff Lee
- * @since 2015-7-15 20:42:47
  * 格式化内存输入
+ * 
+ * @author Jeff Lee
+ * @since 2015-7-15
  */
 public class FormatteMemoryInput {
 	public static void main(String[] args) throws IOException {
-		String filePath = "src" + File.separator +
+		String filePath = new File("src").getAbsolutePath() + File.separator +
+				"main" + File.separator +
+				"java" + File.separator +
 				"org" + File.separator +
 				"javacore" + File.separator +
 				"io" + File.separator +

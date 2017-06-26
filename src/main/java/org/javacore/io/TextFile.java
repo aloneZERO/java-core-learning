@@ -26,9 +26,10 @@ import java.util.TreeSet;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-9-30 16:10:18
  * 文本文件的操作案例
+ * 
+ * @author Jeff Lee
+ * @since 2015-9-30
  */
 public class TextFile extends ArrayList<String> {
 
@@ -39,14 +40,13 @@ public class TextFile extends ArrayList<String> {
 		StringBuilder sb = new StringBuilder();
 		try {
 			// 创建缓存字符输入流
-			BufferedReader in = new BufferedReader(new FileReader(// 创建读取字符文件类
-					new File(fileName).getAbsolutePath()));// 文件绝对路径地址
+			BufferedReader in = new BufferedReader(new FileReader( // 创建读取字符文件类
+					new File(fileName).getAbsolutePath())); // 文件绝对路径地址
 			try {
 				String s;
 				// 读取一个文本行
 				while ((s = in.readLine()) != null) {
-					sb.append(s);
-					sb.append("\n");
+					sb.append(s+System.lineSeparator());
 				}
 			} finally {
 				in.close();
@@ -58,7 +58,7 @@ public class TextFile extends ArrayList<String> {
 	}
 	
 	// 将字符串写入一个文本文件
-	public static void write(String fileName,String text) {
+	public static void write(String fileName, String text) {
 		try {
 			// 创建打印输出流
 			PrintWriter out = new PrintWriter(
@@ -75,7 +75,7 @@ public class TextFile extends ArrayList<String> {
 	}
 	
 	// 通过正则匹配，读取文件
-	public TextFile(String fileName,String splitter) {
+	public TextFile(String fileName, String splitter) {
 		super(Arrays.asList(read(fileName).split(splitter)));
 		// 移除一个空格位置
 		if (get(0).equals("")) remove(0);
@@ -105,7 +105,7 @@ public class TextFile extends ArrayList<String> {
 	
 	public static void main(String[] args) {
 		// 读取文件
-		String file = read("src/org/javacore/io/TextFile.java");
+		String file = read("src/main/java/org/javacore/io/TextFile.java");
 		// 写入到test.txt
 		write("test.txt", file);
 		
@@ -113,7 +113,7 @@ public class TextFile extends ArrayList<String> {
 		text.write("test2.txt");
 		
 		TreeSet<String> words = new TreeSet<>(
-				new TextFile("src/org/javacore/io/TextFile.java","\\W+"));
+				new TextFile("src/main/java/org/javacore/io/TextFile.java","\\W+"));
 		System.out.println(words.headSet("a"));
 		
 	}

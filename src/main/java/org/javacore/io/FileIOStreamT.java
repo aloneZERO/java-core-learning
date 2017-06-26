@@ -1,6 +1,5 @@
 package org.javacore.io;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,17 +21,15 @@ import java.io.IOException;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-10-8 20:06:03
  * FileInputStream&FileOutputStream使用案例
+ * 
+ * @author Jeff Lee
+ * @since 2015-10-8
  */
 public class FileIOStreamT {
-	private static final String thisFilePath = 
-			"src" + File.separator +
-			"org" + File.separator +
-			"javacore" + File.separator +
-			"io" + File.separator +
-			"FileIOStreamT.java";
+	private static final String thisFilePath = FileIOStreamT.class
+			.getResource("/io/test.txt").getPath();
+	
 	public static void main(String[] args) throws IOException {
 		// 创建文件输入流
 		FileInputStream fileInputStream = new FileInputStream(thisFilePath);

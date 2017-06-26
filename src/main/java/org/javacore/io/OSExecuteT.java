@@ -19,9 +19,10 @@ import java.io.InputStreamReader;
  */
 
 /**
+ * 操作系统进程流的案例
+ * 
  * @author Jeff Lee
- * @since 2015-10-6 18:40:24
- *  操作系统进程流的案例
+ * @since 2015-10-6
  */
 public class OSExecuteT {
 	public static void commond(String command) {
@@ -29,13 +30,12 @@ public class OSExecuteT {
 		
 		try {
 			// 创建操作系统进程
-			Process process = 
-					new ProcessBuilder(command.split(" ")).start();
+			Process process = new ProcessBuilder(command.split(" ")).start();
 			
 			// 读取进程的输入流
 			BufferedReader results = new BufferedReader(
 					new InputStreamReader(process.getInputStream()));
-			String s;
+			String s = null;
 			while ((s = results.readLine()) != null)
 				System.out.println(s);
 			
@@ -47,7 +47,6 @@ public class OSExecuteT {
 				if (!err)
 					err = true;
 			}
-			
 		} catch (Exception e) {
 			if (!command.startsWith("CMD /C"))
 				commond("CMD /C " + command);

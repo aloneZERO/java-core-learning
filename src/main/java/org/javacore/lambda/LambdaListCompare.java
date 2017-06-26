@@ -22,7 +22,8 @@ import java.util.List;
 /**
  * List 比较器
  *
- * Created by bysocket on 16/7/12.
+ * @author bysocket
+ * @since 16/7/12
  */
 public class LambdaListCompare {
     public static void main(String[] args) {

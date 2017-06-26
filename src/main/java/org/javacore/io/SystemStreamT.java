@@ -21,15 +21,16 @@ import java.io.PrintStream;
  */
 
 /**
+ * System.out, System.err中IO的使用:</br>
+ * 替换系统流，输出至文本
+ * 
  * @author Jeff Lee
  * @since 2015-7-31 11:04:26
- * 	System.out, System.err中IO的使用
- * 		替换系统流，输出至文本
  */
 public class SystemStreamT {
 	public static void main(String[] args) throws IOException {
 		// 创建文件输出流
-		OutputStream out = new FileOutputStream("D:\\data\\console.txt");
+		OutputStream out = new FileOutputStream("D:/console.txt");
 		// 创建新的文件输出打印流
 		PrintStream print = new PrintStream(out);
 		// 设置标准输出流

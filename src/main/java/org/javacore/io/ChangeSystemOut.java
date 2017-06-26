@@ -18,13 +18,14 @@ import java.io.PrintWriter;
  */
 
 /**
+ * 利用System.out输出案例
+ * 
  * @author Jeff Lee
- * @since 2015-10-6 18:38:15
- * 改变System.out输出案例
+ * @since 2015-10-6
  */
 public class ChangeSystemOut {
 	public static void main(String[] args) {
-		PrintWriter out = new PrintWriter(System.out,true);
+		PrintWriter out = new PrintWriter(System.out, true);
 		out.println("Hello PrintWriter");
 		out.close();
 	}

@@ -19,21 +19,24 @@ import java.io.FilenameFilter;
  */
 
 /**
+ * 类名过滤器的使用
+ * 
  * @author Jeff Lee
  * @since 2015-7-20 13:31:41
- * 类名过滤器的使用
  */
 public class FilenameFilterT {
 
 	public static void main(String[] args) {
 		// IO包路径
-		String dir = "src" + File.separator +
+		String dir = new File("src").getAbsolutePath() + File.separator +
+				"main" + File.separator +
+				"java" + File.separator +
 				"org" + File.separator +
 				"javacore" + File.separator +
 				"io";
 		File file = new File(dir);
 		// 创建过滤器文件
-		MyFilter filter = new MyFilter("y.java");
+		MyFilter filter = new MyFilter("T.java");
 		// 过滤
 		String files[] = file.list(filter);
 		
@@ -56,7 +59,7 @@ public class FilenameFilterT {
 
 		@Override
 		public boolean accept(File dir, String name) {
-			return name.endsWith(type);// 以Type结尾
+			return name.endsWith(type); // 以Type结尾
 		}
 		
 	}

@@ -19,9 +19,10 @@ import java.io.FilenameFilter;
  */
 
 /**
+ * FilenameFilter文件过滤器的使用
+ * 
  * @author Jeff Lee
  * @since 2015-7-13 21:13:58
- * FilenameFilter文件过滤器的使用
  */
 public class JavaFileListT {
 	
@@ -39,7 +40,7 @@ public class JavaFileListT {
 	
 	public static void main(String[] args) {
 		// 创建一个目录
-		File file = new File("src\\org\\javacore\\io");// 当前目录
+		File file = new File("src/main/java/org/javacore/io"); // 当前目录
 		// 获取文件名数组
 		String fileNames[] = file.list(javaFileFilter(".java"));
 		// 打印

@@ -16,9 +16,10 @@ package org.javacore.io.byteoper;
  */
 
 /**
+ * String转换成byte数组
+ * 
  * @author Jeff Lee
- * @since 2015-6-19 21:27:41
- * 	String转换成byte数组
+ * @since 2015-6-19
  */
 public class StringConvertT {
 

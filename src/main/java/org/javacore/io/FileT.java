@@ -34,9 +34,10 @@ import java.io.IOException;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-6-30 14:21:47
  * File类的使用
+ * 
+ * @author Jeff Lee
+ * @since 2015-6-30
  */
 public class FileT {
 
@@ -46,7 +47,7 @@ public class FileT {
 			File dir = new File("E:" + File.separator + "dir");
 			dir.mkdir();
 			// 创建一个文件
-			File file = new File(dir,"file.txt");
+			File file = new File(dir, "file.txt");
 			file.createNewFile();
 			
 			// 是否是一个目录
@@ -59,6 +60,13 @@ public class FileT {
 				System.out.println(file.getName() + "被删除了！");
 			} else {
 				System.out.println("文件删除失败！");
+			}
+			
+			// 删除目录（目录内容不为空，无法删除）
+			if (dir.delete()) {
+				System.out.println(dir.getName() + "被删除了！");
+			} else {
+				System.out.println("目录删除失败！");
 			}
 		} catch (IOException e) { e.printStackTrace(); }
 	}

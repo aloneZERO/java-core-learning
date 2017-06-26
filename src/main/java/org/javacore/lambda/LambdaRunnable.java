@@ -17,15 +17,16 @@ package org.javacore.lambda;
  */
 
 /**
- * Lambda - 启动线程
+ * Lambda - 创建线程
  *
- * Created by bysocket on 16/7/13.
+ * @author bysocket
+ * @since 16/7/13
  */
 public class LambdaRunnable {
     static int b = 10;
 
     public static void main(String[] args) {
-        // 启动线程
+        // 老式启动线程
 //        Thread thread = new Thread(new Runnable() {
 //            @Override
 //            public void run() {
@@ -34,7 +35,7 @@ public class LambdaRunnable {
 //            }
 //        });
 
-        // Lambda - 启动线程
+        // Lambda - 创建线程
         Thread thread = new Thread(() -> {
             b++;
             System.out.println(b);

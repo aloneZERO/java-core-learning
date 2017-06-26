@@ -20,10 +20,11 @@ import java.io.PipedOutputStream;
  */
 
 /**
+ * 管道输入输出流的使用</br>
+ * 同一个JVM中，两个线程直接的字节流通信.
+ * 
  * @author Jeff Lee
  * @since 2015-7-30 21:58:18
- * 管道输入输出流的使用
- * 		同一个JVM中，两个线程直接的字节流通信
  */
 public class PipeStreamT {
 	public static void main(String[] args) throws IOException {
