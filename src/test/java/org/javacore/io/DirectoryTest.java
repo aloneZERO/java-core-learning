@@ -16,9 +16,9 @@ package org.javacore.io;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-7-13 10:06:56
  * {@link Directory}的测试类
+ * @author Jeff Lee
+ * @since 2015-7-13
  */
 public class DirectoryTest {
 	public static void main(String[] args) {
