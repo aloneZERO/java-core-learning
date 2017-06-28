@@ -19,9 +19,11 @@ package org.javacore.stream;
 /**
  * 创建流
  *
- * Created by bysocket on 16/7/18.
+ * @author BYSocket
+ * @since 16/7/18
  */
 public class CreateStreamTest {
     public static void main(String[] args) {
+    	
     }
 }

@@ -20,9 +20,9 @@ import java.util.Arrays;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-11-9 10:45:19
  * 反射扩容对象数组
+ * @author Jeff Lee
+ * @since 2015-11-9
  */
 public class ArrayCopy {
     public static void main(String[] args) {
@@ -35,7 +35,9 @@ public class ArrayCopy {
         System.out.println(Arrays.toString(str));
     }
 
-    public static Object goodCopyOf(Object a,int newLength){
+    
+    @SuppressWarnings("rawtypes")
+	public static Object goodCopyOf(Object a,int newLength){
         // 获取Class对象
         Class cl = a.getClass();
         // 如果不是数组对象，则返回null;

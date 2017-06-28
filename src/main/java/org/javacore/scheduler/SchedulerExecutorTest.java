@@ -1,4 +1,5 @@
-package org.javacore.scheduler; /*
+package org.javacore.scheduler; 
+/*
  * Copyright [2015] [Jeff Lee]
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,10 +22,9 @@ import java.util.concurrent.TimeUnit;
 /**
  * ScheduledExecutorService的使用
  * @author BYSocket
- * @since 2016-01-10 14:20:00
+ * @since 2016-01-10
  */
-public class SchedulerExecutorTest implements
-        Runnable {
+public class SchedulerExecutorTest implements Runnable {
     private final String jobName;
 
     public SchedulerExecutorTest(String jobName) {
@@ -39,8 +39,10 @@ public class SchedulerExecutorTest implements
     public static void main(String[] args) {
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
         // 一秒
-        executor.scheduleAtFixedRate(new SchedulerExecutorTest("job1"), 1, 1, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(
+        		new SchedulerExecutorTest("job1"), 1, 1, TimeUnit.SECONDS);
         // 两秒
-        executor.scheduleWithFixedDelay(new SchedulerExecutorTest("job2"),1,2,TimeUnit.SECONDS);
+        executor.scheduleWithFixedDelay(
+        		new SchedulerExecutorTest("job2"),1,2,TimeUnit.SECONDS);
     }
 }

@@ -4,7 +4,8 @@ import java.util.Date;
 
 /**
  * 描述:事件类
- * Created by bysocket on 16/3/4.
+ * @author bysocket
+ * @since 16/3/4
  */
 public class Event {
     private Date date;

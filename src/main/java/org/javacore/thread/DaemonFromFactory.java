@@ -4,9 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by BYSocket on 2015/11/2.
- *
+/*
  * Copyright [2015] [Jeff Lee]
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,9 +21,10 @@ import java.util.concurrent.TimeUnit;
  */
 
 /**
+ * 后台线程工厂类的使用
+ * 
  * @author Jeff Lee
- * @since 2015-11-3 18:17:58
- * 	后台线程工厂类的使用
+ * @since 2015-11-3
  */
 public class DaemonFromFactory implements Runnable {
     @Override
@@ -45,7 +44,7 @@ public class DaemonFromFactory implements Runnable {
         ExecutorService exec =
                 Executors.newCachedThreadPool(new DaemonThreadFactory());
         for (int i = 0 ; i < 10 ; i++)
-            exec.execute(new DaemonFromFactory());// 此Runnable实现类，经过线程工厂创建
+            exec.execute(new DaemonFromFactory()); // 此Runnable实现类，经过线程工厂创建
         // 关闭线程池
         exec.shutdown();
         System.out.println("任务已经全部启动");

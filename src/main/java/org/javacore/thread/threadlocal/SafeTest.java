@@ -4,7 +4,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 描述:可以看到线程每个有不同的启动时间,但是结束时间也会不相同.
- * Created by bysocket on 16/3/8.
+ * 
+ * @author bysocket
+ * @since 16/3/8
  */
 public class SafeTest {
     public static void main(String[] args) {

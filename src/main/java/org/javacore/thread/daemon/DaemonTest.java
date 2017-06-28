@@ -4,9 +4,11 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
- * 1. 知道3个WriteTask线程休眠后,CleanerTask才执行
- * 2. 从结果中,可以看出队列维持在一定数量当中
- * Created by bysocket on 16/3/4.
+ * 1. 知道3个WriteTask线程休眠后,CleanerTask才执行;<br/>
+ * 2. 从结果中,可以看出队列维持在一定数量当中.
+ * 
+ * @author bysocket
+ * @since 16/3/4
  */
 public class DaemonTest {
     public static void main(String[] args) {

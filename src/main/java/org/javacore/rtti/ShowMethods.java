@@ -19,10 +19,11 @@ import java.lang.reflect.Method;
  */
 
 /**
+ * 获取Class方法案例
  * @author Jeff Lee
- * @since 2015-11-2 16:43:41
- * 	获取Class方法案例
+ * @since 2015-11-2
  */
+@SuppressWarnings("all")
 public class ShowMethods {
     public static void main(String[] args) {
         try {

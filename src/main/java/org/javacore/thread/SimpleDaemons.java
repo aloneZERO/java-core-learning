@@ -2,9 +2,7 @@ package org.javacore.thread;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by BYSocket on 2015/11/2.
- *
+/*
  * Copyright [2015] [Jeff Lee]
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,9 +18,9 @@ import java.util.concurrent.TimeUnit;
  * limitations under the License.
  */
 /**
+ * Daemon后台线程的简单使用
  * @author Jeff Lee
- * @since 2015-11-3 18:09:06
- * 	Daemon后台线程的简单使用
+ * @since 2015-11-3
  */
 public class SimpleDaemons implements Runnable{
     @Override

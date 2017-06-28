@@ -256,11 +256,11 @@ public class Duration implements Serializable {
 
     /**
      * Returns a Duration from the parsed {@code duration}. Example:
-     * <br />
+     * <br/>
      * <pre>
-     * 5 s
-     * 5 seconds
-     * 10m
+     * 5  s
+     * 5  seconds
+     * 10 m
      * 10 minutes
      * </pre>
      */

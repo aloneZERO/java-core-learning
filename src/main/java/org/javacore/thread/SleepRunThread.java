@@ -1,4 +1,6 @@
-package org.javacore.thread; /*
+package org.javacore.thread;
+
+/*
  * Copyright [2015] [Jeff Lee]
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,16 +19,16 @@ package org.javacore.thread; /*
 /**
  * Thread中start和run的区别
  * @author BYSocket
- * @since 2016-01-18 15:55:00
+ * @since 2016-01-18
  */
 public class SleepRunThread {
     public static void main(String[] args) {
         System.out.println("当前线程ID => " + Thread.currentThread().getId());
 
         SRThread t1 = new SRThread("t1");
-        t1.start();
+        t1.run(); // 主线程，就是简单的方法调用
         SRThread t2 = new SRThread("t2");
-        t2.run();
+        t2.start();
     }
 }
 class SRThread extends Thread {

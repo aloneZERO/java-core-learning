@@ -5,7 +5,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 描述:私有变量会被所有线程共享
- * Created by bysocket on 16/3/8.
+ * @author bysocket
+ * @since 16/3/8
  */
 public class UnsafeTask implements Runnable{
     private Date startDate;

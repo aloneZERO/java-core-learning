@@ -3,7 +3,8 @@ package org.javacore.thread.join;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by bysocket on 16/3/3.
+ * @author bysocket
+ * @since 16/3/3
  */
 public class DSLoader implements Runnable {
     @Override

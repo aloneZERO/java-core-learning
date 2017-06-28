@@ -6,7 +6,8 @@ import java.time.format.DateTimeFormatter;
 /**
  * 基于 JDK 8 time包的时间工具类
  * <p/>
- * Created by bysocket on 16/8/23.
+ * @author bysocket
+ * @since 16/8/23
  */
 public final class TimeUtil {
 

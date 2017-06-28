@@ -5,14 +5,15 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 描述:看类里面说明
- * Created by bysocket on 16/3/8.
+ * @author bysocket
+ * @since 16/3/8
  */
 public class SafeTask implements Runnable{
     /**
      * ThreadLocal对象不会被所有线程共享
      * --> 线程局部变量 <--
      */
-    private static ThreadLocal<Date> startDate = new ThreadLocal<Date>(){
+    private static ThreadLocal<Date> startDate = new ThreadLocal<Date>() {
         /**
          * 隐式实现初始化对象
          * @return

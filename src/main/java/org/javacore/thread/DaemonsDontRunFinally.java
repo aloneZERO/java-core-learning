@@ -2,9 +2,7 @@ package org.javacore.thread;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by BYSocket on 2015/11/2.
- *
+/*
  * Copyright [2015] [Jeff Lee]
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,9 +19,10 @@ import java.util.concurrent.TimeUnit;
  */
 
 /**
+ * 后台线程遇到Finally
+ * 
  * @author Jeff Lee
- * @since 2015-11-3 18:17:58
- * 	后台线程遇到Finally
+ * @since 2015-11-3
  */
 class ADaemon implements Runnable {
 
@@ -32,7 +31,7 @@ class ADaemon implements Runnable {
         try {
             System.out.println("启动ADaemon");
             TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException e ){
+        } catch (InterruptedException e ) {
             System.out.println("InterruptedException");
         } finally {
             // 因为main是非后台线程，main线程结束。ADaemon后台线程也就结束。因此可能没到finally就结束了。
@@ -40,11 +39,13 @@ class ADaemon implements Runnable {
         }
     }
 }
+
 public class DaemonsDontRunFinally {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread t = new Thread(new ADaemon());
         // 设置线程为后台线程
         t.setDaemon(true);
         t.start();
+//      TimeUnit.SECONDS.sleep(3); // 卡一下main线程，finally代码块会执行
     }
 }

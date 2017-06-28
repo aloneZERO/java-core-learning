@@ -24,15 +24,17 @@ import java.util.stream.Stream;
 /**
  * 组合 - 流
  *
- * Created by bysocket on 16/7/14.
+ * @author BYSocket
+ * @since 16/7/13
  */
+@SuppressWarnings("all")
 public class ConcatStreamTest {
     public static void main(String[] args) {
         List<String> list1 = Arrays.asList("a","b","c");
         List<String> list2 = Arrays.asList("d","e","f");
 
         // 组合list1和list2的流
-        List result = Stream.concat(list1.stream(),list2.stream()).collect(Collectors.toList());
+		List result = Stream.concat(list1.stream(),list2.stream()).collect(Collectors.toList());
         result.stream().forEach(System.out::println);
     }
 }

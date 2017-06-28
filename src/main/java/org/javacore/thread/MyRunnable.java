@@ -16,12 +16,13 @@ package org.javacore.thread;
  */
 
 /**
+ * Runnable接口的简单使用
+ * 测试 --> {@link MyRunnableTest}
+ * 
  * @author Jeff Lee
- * @since 2015-7-4 16:14:47
- * 	Runnable接口的简单使用
- * 	测试 --> {@link MyRunnableTest}
+ * @since 2015-7-4
  */
-public class MyRunnable implements Runnable{
+public class MyRunnable implements Runnable {
 
 	@Override
 	public void run() {

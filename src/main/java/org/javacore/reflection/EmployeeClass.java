@@ -17,9 +17,10 @@ package org.javacore.reflection;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-11-9 10:45:19
  * 反射在继承中的案例
+ * 
+ * @author Jeff Lee
+ * @since 2015-11-9
  */
 class Employee {
     private String name;

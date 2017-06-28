@@ -20,9 +20,10 @@ import java.util.concurrent.Executors;
  */
 
 /**
+ * 线程池CachedThreadPool的简单使用-启动LiftOff线程{@link LiftOff}
+ * 
  * @author Jeff Lee
- * @since 2015-11-2 17:21:04
- * 	线程池CachedThreadPool的简单使用-启动LiftOff线程{@link LiftOff}
+ * @since 2015-11-2
  */
 public class CachedThreadPool {
     public static void main(String[] args) {

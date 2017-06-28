@@ -6,7 +6,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 描述:写事件到一个队列
- * Created by bysocket on 16/3/4.
+ * 
+ * @author bysocket
+ * @since 16/3/4
  */
 public class WriterTask implements Runnable {
     private Deque<Event> deque;
@@ -22,7 +24,7 @@ public class WriterTask implements Runnable {
             event.setDate(new Date());
             event.setEvent(String.format("The thread  %s has generated an event",Thread.currentThread().getId()));
             deque.addFirst(event);
-
+            
             try {
                 TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {

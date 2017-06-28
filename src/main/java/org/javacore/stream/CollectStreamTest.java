@@ -21,8 +21,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- *
- * Created by bysocket on 16/7/14.
+ * @author BYSocket
+ * @since 16/7/14
  */
 public class CollectStreamTest {
     public static void main(String[] args) {

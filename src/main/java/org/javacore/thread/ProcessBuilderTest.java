@@ -18,10 +18,10 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * Java进程调用CMD
+ * Java进程调用CMD<br/>
  *  VM options => -Dfile.encoding="GBK"
  * @author BYSocket
- * @since 2016-01-18 16:08:00
+ * @since 2016-01-18
  */
 public class ProcessBuilderTest {
     public static void main(String[] args) throws IOException {

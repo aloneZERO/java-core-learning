@@ -24,8 +24,10 @@ import java.util.stream.Collectors;
  * 过滤
  * 流的元素数量
  *
- * Created by bysocket on 16/7/14.
+ * @author BYSocket
+ * @since 16/7/14
  */
+@SuppressWarnings("all")
 public class CountFilterStreamTest {
     public static void main(String[] args) {
         List<String> list1 = Arrays.asList("a","b","ac");
@@ -38,6 +40,5 @@ public class CountFilterStreamTest {
         // count  流的元素数量
         long l = list1.stream().filter(str -> str.startsWith("a")).count();
         System.out.println("list1 字符从a开始的数量:" + l);
-
     }
 }

@@ -17,9 +17,10 @@ package org.javacore.thread;
  */
 
 /**
+ * 线程简单使用-启动LiftOff线程{@link LiftOff}
+ * 
  * @author Jeff Lee
- * @since 2015-11-2 17:06:48
- * 	线程简单使用-启动LiftOff线程{@link LiftOff}
+ * @since 2015-11-2
  */
 public class BasicThreads {
     public static void main(String[] args) {

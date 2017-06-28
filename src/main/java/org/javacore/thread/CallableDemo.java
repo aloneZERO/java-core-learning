@@ -25,11 +25,12 @@ import java.util.concurrent.Future;
  */
 
 /**
+ * Callable接口的使用：<br/>
+ * 实现带返回值的任务
+ * 
  * @author Jeff Lee
- * @since 2015-11-2 18:58:36
- * 	Callable接口的使用 --- 实现带返回值的任务
+ * @since 2015-11-2
  */
-
 // Callable实现类task，指定其类型参数
 class TaskWithResult implements Callable<String> {
 
@@ -40,7 +41,7 @@ class TaskWithResult implements Callable<String> {
 
     @Override
     public String call() throws Exception {
-        return "result of TaskWithResult " + id;
+        return "result of TaskWithResult " + this.id;
     }
 }
 
@@ -51,12 +52,11 @@ public class CallableDemo {
         // Callable实现类task的返回结果集
         ArrayList<Future<String>> results = new ArrayList<>();
         for (int i = 0; i < 5 ; i++)
-            results.add(exec.submit(new TaskWithResult(i)));// 使用submit来启动Tasks
+            results.add(exec.submit(new TaskWithResult(i))); // 使用submit来启动Tasks
 
         // 异步计算的结果
         for (Future<String> fs : results)
-            try {
-                // get阻塞，直至获取结果
+            try { // get阻塞，直至获取结果
                 System.out.println(fs.get());
             } catch (InterruptedException e) {
                 System.out.println(e);

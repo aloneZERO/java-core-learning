@@ -4,9 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by BYSocket on 2015/11/2.
- *
+/*
  * Copyright [2015] [Jeff Lee]
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,9 +21,9 @@ import java.util.concurrent.TimeUnit;
  */
 
 /**
+ * 休眠线程sleep的使用
  * @author Jeff Lee
- * @since 2015-11-3 09:04:16
- * 	休眠线程sleep的使用
+ * @since 2015-11-3
  */
 public class SleepingTask extends LiftOff {
     @Override

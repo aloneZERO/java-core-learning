@@ -40,7 +40,8 @@ public class LambdaListCompare {
 //            }
 //        });
 
-        /** Lambda表达式格式:
+        /** 
+         * Lambda表达式格式:
          * (Type1 param1, Type2 param2, ..., TypeN paramN) -> {
          *  statment1;
          *  statment2;

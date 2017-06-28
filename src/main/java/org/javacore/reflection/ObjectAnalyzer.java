@@ -23,14 +23,15 @@ import java.util.ArrayList;
  */
 
 /**
+ * 反射对象分析工具 {@link ObjectAnalyzerTest}
  * @author Jeff Lee
- * @since 2015-11-9 10:45:19
- * 反射对象分析工具 @{link test/org.javacore.reflection.ObjectAnalyzerTest}
+ * @since 2015-11-9
  */
 public class ObjectAnalyzer {
-    private ArrayList<Object> visited = new ArrayList<>();
-
-    public String toString(Object obj){
+    private static ArrayList<Object> visited = new ArrayList<>();
+    
+    @SuppressWarnings("rawtypes")
+	public static String toString(Object obj) {
         if (obj == null) return "null";
         if (visited.contains(obj)) return "...";
         visited.add(obj);
@@ -53,9 +54,9 @@ public class ObjectAnalyzer {
             return r + "}";
         }
 
-        String r =cl.getName();
+        String r = cl.getName();
         do {
-            r += "[";
+            r += "[ ";
             Field[] fields = cl.getDeclaredFields();
             AccessibleObject.setAccessible(fields,true);
             for (Field f : fields){
@@ -64,10 +65,9 @@ public class ObjectAnalyzer {
                     try {
                         Class t = f.getType();
                         Object val = f.get(obj);
-                        if (t.isPrimitive())
-                            r += val;
-                        else
-                            r +=toString(val);
+                        if (!t.isPrimitive())
+                        	val = toString(val);
+                        r += val + " ";
                     } catch (Exception e){
                         e.printStackTrace();
                     }
@@ -76,9 +76,6 @@ public class ObjectAnalyzer {
             r += "]";
             cl = cl.getSuperclass();
         } while (cl != null);
-
         return r;
     }
-
-
 }

@@ -12,7 +12,9 @@ import java.util.concurrent.Executors;
 
 /**
  * 描述:RPC服务发布者
- * Created by bysocket on 16/2/28.
+ * 
+ * @author bysocket
+ * @since 16/2/28
  */
 public class RpcExporter {
     // 创建线程池
@@ -23,28 +25,27 @@ public class RpcExporter {
         serverSocket.bind(new InetSocketAddress(hostName,port));
         try {
             while (true) {
-                /**
-                 * 监听Client的TCP连接,将其封装成Task,由线程池执行.
-                 */
+                // 监听Client的TCP连接,将其封装成Task,由线程池执行.
                 executor.execute(new ExporterTask(serverSocket.accept()));
             }
         } finally {
-          serverSocket.close();  
+          serverSocket.close();
         }
     }
 
     /**
-     * 线程Task:
-     * 1. 将客户端发送的二进制流反序列化成对象,反射调用服务实现者,获取执行结果
-     * 2. 将执行结果对象反序列化,通过Socket发送给客户端
-     * 3. 远程服务调用完成之后,释放Socket等连接资源,防止句柄泄漏
+     * 线程Task:<br/>
+     * 1. 将客户端发送的二进制流反序列化成对象,反射调用服务实现者,获取执行结果.<br/>
+     * 2. 将执行结果对象反序列化,通过Socket发送给客户端.<br/>
+     * 3. 远程服务调用完成之后,释放Socket等连接资源,防止句柄泄漏.<br/>
      */
     private static class ExporterTask implements Runnable {
         Socket client = null;
         public ExporterTask(Socket accept) {
             this.client = accept;
         }
-
+        
+        @Override
         public void run() {
             ObjectInputStream   input  = null;
             ObjectOutputStream  output = null;
@@ -71,7 +72,7 @@ public class RpcExporter {
                 // 对象输出流
                 output = new ObjectOutputStream(client.getOutputStream());
                 output.writeObject(result);
-
+                
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {

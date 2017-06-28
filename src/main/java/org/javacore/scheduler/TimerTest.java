@@ -21,7 +21,7 @@ import java.util.TimerTask;
 /**
  * Timer的使用
  * @author BYSocket
- * @since 2016-01-09 22:19:00
+ * @since 2016-01-09
  */
 public class TimerTest extends TimerTask{
 
@@ -39,7 +39,7 @@ public class TimerTest extends TimerTask{
     public static void main(String[] args) {
         // 一种工具，线程用其安排以后在后台线程中执行的任务
         Timer timer = new Timer();
-        timer.schedule(new TimerTest("Job 1") , 1000 , 1000); // 一秒
-        timer.schedule(new TimerTest("Job 2") , 2000 , 2000); // 两秒
+        timer.schedule(new TimerTest("Job 1") , 1000 , 1000); // 执行间隔：一秒
+        timer.schedule(new TimerTest("Job 2") , 2000 , 2000); // 执行间隔：两秒
     }
 }

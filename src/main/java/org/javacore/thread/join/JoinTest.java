@@ -1,7 +1,8 @@
 package org.javacore.thread.join;
 
 /**
- * Created by bysocket on 16/3/3.
+ * @author bysocket
+ * @since 16/3/3
  */
 public class JoinTest {
     public static void main(String[] args) throws InterruptedException {
@@ -11,7 +12,7 @@ public class JoinTest {
         t1.start();
         t2.start();
 
-        //可以注释其中一个加深理解
+        // 可以注释其中一个加深理解
         t1.join();
         //t2.join();
 

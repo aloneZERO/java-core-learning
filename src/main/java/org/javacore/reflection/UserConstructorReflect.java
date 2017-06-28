@@ -19,9 +19,9 @@ import java.lang.reflect.InvocationTargetException;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-9-8 09:35:35
  * 利用反射通过构造器创建一个实例
+ * @author Jeff Lee
+ * @since 2015-9-8
  */
 public class UserConstructorReflect {
 	public static void main(String[] args) throws NoSuchMethodException,
