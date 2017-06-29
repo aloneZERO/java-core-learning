@@ -1,7 +1,6 @@
 package org.javacore.nio;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -25,16 +24,17 @@ import java.nio.charset.Charset;
  */
 
 /**
+ * ByteBuffer与char之间转换的案例
+ * 
  * @author Jeff Lee
- * @since 2015-10-10 18:58:15
- *  ByteBuffer与char之间转换的案例
+ * @since 2015-10-10
  */
+@SuppressWarnings("all")
 public class BufferToText {
     private static final int BSIZE = 1024; // 1K 字节
     public static void main(String[] args) throws IOException {
         // 从文件输出流获取FileChannel
-        FileChannel fc =
-                new FileOutputStream("data.txt").getChannel();
+        FileChannel fc = new FileOutputStream("data.txt").getChannel();
         // 将带有字节的缓冲区写入该通道
         fc.write(ByteBuffer.wrap("some data".getBytes()));
         fc.close();

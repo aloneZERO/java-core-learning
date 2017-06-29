@@ -21,15 +21,16 @@ import java.util.SortedMap;
  */
 
 /**
+ * 可用的CharSet打印
+ * 
  * @author Jeff Lee
- * @since 2015-10-11 19:51:10
- *  可用的CharSet打印
+ * @since 2015-10-11
  */
 public class AvailableCharSets {
-    public static void main(String[] args) {
+    @SuppressWarnings("rawtypes")
+	public static void main(String[] args) {
         // charset对象的有序映射
-        SortedMap<String,Charset> charSets =
-                Charset.availableCharsets();
+        SortedMap<String,Charset> charSets = Charset.availableCharsets();
         // 获取key的迭代器
         Iterator<String> iterator = charSets.keySet().iterator();
         while (iterator.hasNext()) {

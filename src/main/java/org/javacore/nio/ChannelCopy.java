@@ -23,14 +23,17 @@ import java.nio.channels.FileChannel;
  */
 
 /**
+ * FileChannel的文件复制案例
+ * 
  * @author Jeff Lee
- * @since 2015-10-9 17:38:08
- * 	FileChannel的文件复制案例
+ * @since 2015-10-9
  */
 public class ChannelCopy {
 	// 读取的文件
 	private static final String sourceFile = 
 			"src" + File.separator +
+			"main" + File.separator +
+			"java" + File.separator +
 			"org" + File.separator +
 			"javacore" + File.separator +
 			"nio" + File.separator +
@@ -43,7 +46,7 @@ public class ChannelCopy {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws IOException {
 		// 创建用于读写的Channel
-		FileChannel 
+		FileChannel
 			in  = new FileInputStream(sourceFile).getChannel(),
 			out = new FileOutputStream(targetFile).getChannel();
 		

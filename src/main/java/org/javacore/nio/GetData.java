@@ -19,9 +19,10 @@ import java.nio.ByteBuffer;
  */
 
 /**
+ * ByteBuffer操作类型数据的案例
+ * 
  * @author Jeff Lee
- * @since 2015-10-12 18:53:10
- *  ByteBuffer操作类型数据的案例
+ * @since 2015-10-12
  */
 public class GetData {
     private static final int BSIZE = 1024; // 1字节
@@ -29,10 +30,10 @@ public class GetData {
         // 创建字节缓冲区
         ByteBuffer bb = ByteBuffer.allocate(BSIZE);
         int i = 0;
-        while (i++ < bb.limit())// 缓冲区的限制
-            if (bb.get() != 0)// 读取当前位置字节，如果字节不等于0
+        while (i++ < bb.limit()) // 缓冲区的限制
+            if (bb.get() != 0) // 读取当前位置字节，如果字节不等于0
                 System.out.println("该字节不为0");
-        // 读取到最后一个跳出限制while，i为BSIZE大1。
+        // 读取到最后一个跳出限制while，i为BSIZE大1
         System.out.println("i = " + i);
 
         // 重绕此缓冲区

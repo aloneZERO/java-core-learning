@@ -1,6 +1,5 @@
 package org.javacore.nio;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileLock;
@@ -28,8 +27,9 @@ import java.util.concurrent.TimeUnit;
  * 文件加锁
  */
 public class FileLocking {
-    public static void main(String[] args) throws IOException, InterruptedException {
+	public static void main(String[] args) throws IOException, InterruptedException {
         // 获取输出流
+		@SuppressWarnings("resource")
         FileOutputStream fos = new FileOutputStream("data.txt");
         // 从输出流中获取文件加锁对象，并锁定File
         FileLock fl = fos.getChannel().lock();

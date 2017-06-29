@@ -20,9 +20,10 @@ import java.nio.CharBuffer;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-10-14 15:48:12
  * 利用buffer实现交换相邻字符
+ * 
+ * @author Jeff Lee
+ * @since 2015-10-14
  */
 public class UsingBuffers {
 

@@ -24,9 +24,10 @@ import java.nio.channels.FileChannel;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-10-8 17:33:19
  * 从流中获取FileChannel的案例
+ * 
+ * @author Jeff Lee
+ * @since 2015-10-8
  */
 public class GetChannel {
 	private static final int BSIZE = 1024; // 1K字节
@@ -39,7 +40,7 @@ public class GetChannel {
 		// 从文件输出流获取FileChannel
 		FileChannel fc = new FileOutputStream("data.txt").getChannel();
 		// 将含有字节序列的缓冲区写入文件通道
-		fc.write(ByteBuffer.wrap("Some Text".getBytes()));// 将已存在的字节数组包装到ByteBuffer
+		fc.write(ByteBuffer.wrap("Some Text".getBytes())); // 将已存在的字节数组包装到ByteBuffer
 		// 关闭通道
 		fc.close();
 		

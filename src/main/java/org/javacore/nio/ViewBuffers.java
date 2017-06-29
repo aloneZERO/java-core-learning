@@ -25,9 +25,10 @@ import java.nio.ShortBuffer;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-10-13 20:40:35
  * 不同视图下的缓冲区
+ * 
+ * @author Jeff Lee
+ * @since 2015-10-13
  */
 public class ViewBuffers {
     public static void main(String[] args) {

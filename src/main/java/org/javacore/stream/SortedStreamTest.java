@@ -22,7 +22,8 @@ import java.util.List;
 /**
  * 排序
  *
- * Created by bysocket on 16/7/14.
+ * @author BYSocket
+ * @since 16/7/14
  */
 public class SortedStreamTest {
     public static void main(String[] args) {

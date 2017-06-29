@@ -22,9 +22,10 @@ import java.util.stream.Collectors;
 
 /**
  * 去重
- *
- * Created by bysocket on 16/7/14.
+ * @author BYSocket
+ * @since 16/7/14
  */
+@SuppressWarnings("all")
 public class DistinctStreamTest {
     public static void main(String[] args) {
         List<String> list1 = Arrays.asList("a","b","b","b","ac");

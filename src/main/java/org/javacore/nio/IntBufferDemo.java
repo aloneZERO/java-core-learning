@@ -20,12 +20,13 @@ import java.nio.IntBuffer;
  */
 
 /**
+ * 通过IntBuffer操作ByteBuffer的int型数据
+ * 
  * @author Jeff Lee
- * @since 2015-10-12 18:53:01
- *  通过IntBuffer操作ByteBuffer的int型数据
+ * @since 2015-10-12
  */
 public class IntBufferDemo {
-    private static final int BSIZE = 1024;// 1字节
+    private static final int BSIZE = 1024; // 1字节
     public static void main(String[] args) {
         // 创建1字节大小的字节缓冲区
         ByteBuffer bb = ByteBuffer.allocate(BSIZE);

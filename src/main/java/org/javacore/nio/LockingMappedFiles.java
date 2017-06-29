@@ -1,6 +1,5 @@
 package org.javacore.nio;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
@@ -25,15 +24,17 @@ import java.nio.channels.FileLock;
  */
 
 /**
- * @author Jeff Lee
- * @since 2015-10-17 15:17:04
  * 映射文件的使用
+ * 
+ * @author Jeff Lee
+ * @since 2015-10-17
  */
 public class LockingMappedFiles {
     static final int LENGTH = 0x8FFFFFF; // 128 MB
     static FileChannel fc;
 
-    public static void main(String[] args) throws IOException {
+    @SuppressWarnings("resource")
+	public static void main(String[] args) throws IOException {
         fc = new RandomAccessFile("data.txt" , "rw").getChannel();
         MappedByteBuffer out = fc.map(FileChannel.MapMode.READ_WRITE,
                 0 , LENGTH);
@@ -56,7 +57,8 @@ public class LockingMappedFiles {
             buffer = mbb.slice();
             start();
         }
-
+        
+        @Override
         public void run() {
             try {
                 // 从FileChannel获取文件加锁对象，并加锁
